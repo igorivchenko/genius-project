@@ -1,0 +1,70 @@
+.mobile-menu {
+  position: relative;
+  padding: 16px 24px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--color-primary-light);
+  transform: translate(100%);
+  transition: 0.3s;
+  z-index: 50;
+  overflow-y: auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 134px;
+    background-image: url('/img/modal-image.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (min-width: $bp-tablet) {
+      right: 0;
+      width: 132px;
+      height: 200px;
+    }
+  }
+
+  &.is-open {
+    transform: translate(0);
+  }
+
+  &__btn-close {
+    margin-top: 16px;
+    margin-right: 24px;
+  }
+
+  &__logo {
+    margin-bottom: 32px;
+    width: 72px;
+    text-decoration: none;
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--color-primary-dark);
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    color: var(--color-primary-dark);
+  }
+}
